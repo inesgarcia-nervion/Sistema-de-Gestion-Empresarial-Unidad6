@@ -6,21 +6,22 @@
 <p>@ViewBag.Mensaje</p>
 
 
-<div class="text-center">
-    <h1>Tabla de multiplicar</h1>
-    <table> 
-        @for (int i = 1; i>=12; i++)
-        {
-            <tr>
-                @for (int j = 1; j >= 12; j++)
-                {
-                    
-                }
-            </tr>
-        }
+<h1 class ="text-center">Tabla de multiplicar</h1>
+<table style="border: 1px solid #333">
+    @for (int i = 1; i <= 12; i++)
+    {
+        <tr>
+            @for (int j = 1; j <= 12; j++)
+            {
+                <td style="border: 1px solid #333; width: 100px;">
+                    @i * @j = @(i* j)
+                </td>
+            }
+        </tr>
+    }
 
-    </table>
-</div>
+</table>
+
 
 
 
