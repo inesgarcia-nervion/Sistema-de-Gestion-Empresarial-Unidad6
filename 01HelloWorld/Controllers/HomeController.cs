@@ -15,7 +15,19 @@ namespace _01HelloWorld.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var hora = DateTime.Now;
+            ViewBag.hora = hora.ToString("hh:mm");
+
+            if (hora.Hour >= 12)
+            {
+                ViewBag.Mensaje = "Ya son mas de las 12 del mediodía";
+            }
+            else
+            {
+                ViewBag.Mensaje = "Aún no son las 12 del mediodía";
+            }
+
+                return View();
         }
 
         public IActionResult Privacy()
