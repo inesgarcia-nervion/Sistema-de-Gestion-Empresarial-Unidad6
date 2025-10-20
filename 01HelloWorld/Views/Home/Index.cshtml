@@ -1,25 +1,36 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var Hora = DateTime.Now;       
+    var mensaje = "";
+    if(Hora.Hour < 12)
+    {
+        mensaje = "Buenos días";
+    }
+    else
+    {
+        mensaje = "Buenas tardes";
+    }
 }
 
-<h1>Hola, son las @ViewBag.hora</h1>
-<p>@ViewBag.Mensaje</p>
+<h1>Hola, son las @Hora.Hour:@Hora.Minute</h1>
+<p>@mensaje</p>
 
 
-<div class="text-center">
-    <h1>Tabla de multiplicar</h1>
-    <table> 
-        @for (int i = 1; i>=12; i++)
-        {
-            <tr>
-                @for (int j = 1; j >= 12; j++)
-                {
-                    
-                }
-            </tr>
-        }
-    </table>
-</div>
+<h1 class ="text-center">Tabla de multiplicar</h1>
+<table style="border: 1px solid black">
+    @for (int i = 1; i <= 12; i++)
+    {
+        <tr>
+            @for (int j = 1; j <= 12; j++)
+            {
+                <td style="border: 1px solid black; width: 100px;">
+                    @i * @j = @(i* j)
+                </td>
+            }
+        </tr>
+    }
+
+</table>
 
 
 
